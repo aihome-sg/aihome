@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Singapore property selling support for one clear flat fee.">
+  <title>Homewise | Sell smart. Keep more.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Homewise home"><span>H</span> homewise</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#stories">Stories</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="button button-small" href="#contact">Get a free estimate <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Singapore property, reimagined</p>
+        <h1>Sell smart.<br><em>Keep more.</em></h1>
+        <p class="hero-lede">Full professional support to sell your home, without handing over a slice of your future.</p>
+        <div class="hero-actions"><a class="button" href="#contact">Book a free strategy call <span>↗</span></a><a class="text-link" href="#how">See how it works <span>↓</span></a></div>
+        <div class="trust-line"><div class="avatars"><span>AM</span><span>JT</span><span>SK</span></div><p><strong>4.9/5</strong> from 120+ homeowners</p></div>
+      </div>
+      <div class="hero-art reveal"><div class="hero-image"></div><div class="stat-card"><strong>Save up to</strong><b>$50k+</b><span>on your property sale</span></div><div class="scribble">more for<br>what matters</div></div>
+    </section>
+
+    <section class="ticker"><span>ONE CLEAR FEE</span><i>✦</i><span>ZERO COMMISSION</span><i>✦</i><span>EXPERT GUIDANCE</span><i>✦</i><span>MORE OF YOUR EQUITY</span></section>
+
+    <section class="section intro" id="how"><div class="section-label">01 / A better way</div><div><h2>The same expertise.<br><em>A fairer fee.</em></h2><p class="body-copy">Traditional agents take 2% of your sale. We believe your hard-earned equity belongs with you. Homewise brings together the people, process and reach you need, for one transparent flat fee.</p><a class="arrow-link" href="#pricing">Explore our fees <span>→</span></a></div></section>
+
+    <section class="calculator-wrap"><div class="calculator"><div><p class="eyebrow">Know your number</p><h2>What could you<br><em>keep?</em></h2><p class="muted">See your estimated savings in seconds.</p></div><form id="calculator-form"><label>Property type<select name="property_type"><option value="hdb">HDB</option><option value="condo">Condo</option><option value="landed">Landed</option></select></label><label>Estimated selling price<div class="money-input"><span>$</span><input name="price" type="text" inputmode="decimal" value="800000" required></div></label><button class="button dark-button" type="submit">Calculate savings <span>→</span></button></form><div class="result" aria-live="polite"><span>You could save</span><strong id="savings">$14,001</strong><small>vs. a traditional 2% commission</small></div></div></section>
+
+    <section class="section pricing-section" id="pricing"><div class="section-label">02 / Simple pricing</div><div><h2>Choose your home.<br><em>Keep your price.</em></h2><p class="body-copy">No hidden charges. No percentage surprises. Just a complete selling service shaped around your property.</p><div class="price-grid"><article><span>HDB</span><strong>$1,999</strong><small>excluding GST</small><a href="#contact">Get started →</a></article><article class="featured"><span>Condo</span><strong>$4,999</strong><small>excluding GST</small><a href="#contact">Get started →</a></article><article><span>Landed</span><strong>$9,999</strong><small>excluding GST</small><a href="#contact">Get started →</a></article></div></div></section>
+
+    <section class="service-band"><div class="section-label">03 / Full support</div><div class="service-content"><h2>Everything you need<br>to <em>sell with confidence.</em></h2><div class="service-list"><div><b>01</b><h3>Price it right</h3><p>Market insight and a clear pricing strategy based on your home's real potential.</p></div><div><b>02</b><h3>Make it seen</h3><p>Professional photography and listings across Singapore's leading property portals.</p></div><div><b>03</b><h3>See it through</h3><p>Buyer enquiries, viewings, negotiation and paperwork handled from start to finish.</p></div></div></div></section>
+
+    <section class="quote-section" id="stories"><div class="quote-mark">“</div><blockquote>We sold in two weeks and saved more than $12,000. The process was clear, personal and completely stress-free.</blockquote><p><strong>Joanne Lim</strong> <span>•</span> 5-room HDB seller, Tampines</p></section>
+
+    <section class="faq-section" id="faq"><div class="section-label">04 / Good to know</div><div><h2>Your questions,<br><em>answered.</em></h2><div class="faqs"><details open><summary>Is a flat fee really enough for a full service? <span>+</span></summary><p>Yes. Your fee covers valuation guidance, marketing, portal listings, buyer management, viewing coordination, negotiation and the official sale process.</p></details><details><summary>Will my home be listed on the major portals? <span>+</span></summary><p>Yes. We list on leading platforms such as PropertyGuru, 99.co and SRX, with professional photography and copy.</p></details><details><summary>How do I get started? <span>+</span></summary><p>Book a free strategy call. We will learn about your plans, discuss your home's market position and outline the best next step.</p></details><details><summary>Is there any obligation? <span>+</span></summary><p>No. The first call is free and no-obligation.</p></details></div></div></section>
+
+    <section class="contact-section" id="contact"><div><p class="eyebrow">Let's talk property</p><h2>Ready to keep<br><em>more of your equity?</em></h2><p>Book a free, no-obligation strategy call with our team.</p></div><form id="lead-form"><label>Your name<input name="name" required placeholder="e.g. Alex Tan"></label><label>Mobile number<input name="phone" required placeholder="+65 8123 4567"></label><label>Email address<input name="email" type="email" required placeholder="you@example.com"></label><label>Property type<select name="property_type" required><option value="">Select one</option><option>HDB</option><option>Condo</option><option>Landed</option></select></label><button class="button light-button" type="submit">Request my free call <span>↗</span></button><p class="form-status" aria-live="polite"></p></form></section>
+  </main>
+  <footer><a class="logo" href="#top"><span>H</span> homewise</a><p>Professional property selling, made fair.</p><div><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div><small>© 2026 Homewise Singapore</small></footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
