@@ -39,13 +39,18 @@ def lead():
     phone = request.form.get("phone", "").strip()
     email = request.form.get("email", "").strip()
     property_type = request.form.get("property_type", "").strip()
+    booking_date = request.form.get("booking_date", "").strip()
+    booking_time = request.form.get("booking_time", "").strip()
 
     if not name or not phone or not email or not property_type:
         return jsonify({"error": "Please complete all required fields."}), 400
 
     # Keep the starter deployment database-free; connect this endpoint to email/CRM in production.
-    app.logger.info("Strategy call request: %s, %s, %s, %s", name, phone, email, property_type)
-    return jsonify({"message": "Thanks. We will be in touch within one business day."})
+    app.logger.info("Strategy call request: %s, %s, %s, %s, %s, %s", name, phone, email, property_type, booking_date, booking_time)
+    confirmation = "Thanks. We will be in touch within one business day."
+    if booking_date and booking_time:
+        confirmation = "Thanks. Your preferred time has been shared with our team."
+    return jsonify({"message": confirmation})
 
 if __name__ == "__main__":
     app.run(debug=True)

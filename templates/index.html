@@ -47,6 +47,21 @@
 
     <section class="contact-section" id="contact"><div><p class="eyebrow">Let's talk property</p><h2>Ready to keep<br><em>more of your equity?</em></h2><p>Book a free, no-obligation strategy call with our team.</p></div><form id="lead-form"><label>Your name<input name="name" required placeholder="e.g. Alex Tan"></label><label>Mobile number<input name="phone" required placeholder="+65 8123 4567"></label><label>Email address<input name="email" type="email" required placeholder="you@example.com"></label><label>Property type<select name="property_type" required><option value="">Select one</option><option>HDB</option><option>Condo</option><option>Landed</option></select></label><button class="button light-button" type="submit">Request my free call <span>↗</span></button><p class="form-status" aria-live="polite"></p></form></section>
   </main>
+  <section class="chatbot" aria-label="Homewise booking assistant">
+    <button class="chat-launcher" id="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel">
+      <span class="chat-launcher-mark">✦</span><span>Ask Maya</span><span class="chat-launcher-dot"></span>
+    </button>
+    <div class="chat-panel" id="chat-panel" hidden>
+      <div class="chat-header"><div><span class="chat-kicker">HOMEWISE ASSISTANT</span><h2>Maya is here to help.</h2></div><button class="chat-close" id="chat-close" type="button" aria-label="Close chat">×</button></div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite">
+        <div class="chat-message assistant"><span class="message-avatar">M</span><p>Hi, I’m Maya. I can help you book a free strategy call with our property team. What are you looking to sell?</p></div>
+      </div>
+      <form class="chat-form" id="chat-form">
+        <div class="chat-options" id="chat-options"><button type="button" data-value="HDB">HDB</button><button type="button" data-value="Condo">Condo</button><button type="button" data-value="Landed">Landed</button></div>
+        <div class="chat-input-row" id="chat-input-row" hidden><input id="chat-input" type="text" autocomplete="off" placeholder="Type your answer..." aria-label="Chat response"><button class="chat-send" type="submit" aria-label="Send message">→</button></div>
+      </form>
+    </div>
+  </section>
   <footer><a class="logo" href="#top"><span>H</span> homewise</a><p>Professional property selling, made fair.</p><div><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div><small>© 2026 Homewise Singapore</small></footer>
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
