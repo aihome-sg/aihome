@@ -52,7 +52,7 @@ const setQuestion = (question, options = false, placeholder = 'Type your answer.
 };
 
 const finishBooking = async () => {
-  addMessage('Thanks. I’m sending your request to the Homewise team now...');
+  addMessage('Thanks. I’m sending your request to the AIHome team now...');
   const formData = new FormData();
   Object.entries(booking).forEach(([key, value]) => formData.append(key, value));
   const response = await fetch('/api/lead', { method: 'POST', body: formData });
