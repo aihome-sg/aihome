@@ -43,6 +43,8 @@ def estimate():
     })
 
 @app.post("/api/lead")
+
+@app.post("/api/lead")
 def lead():
     print("LEAD FORM RECEIVED")
 
@@ -51,8 +53,16 @@ def lead():
     email = request.form.get("email", "").strip()
     property_type = request.form.get("property_type", "").strip()
 
-    if not name or not phone or not email or not property_type:
-        return jsonify({"error": "Please complete all required fields."}), 400
+    if not all([name, phone, email, property_type]):
+        return jsonify({
+            "error": "Please complete all required fields."
+        }), 400
+
+    if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
+        app.logger.error("Email credentials are missing from .env")
+        return jsonify({
+            "error": "Email service is not configured."
+        }), 500
 
     try:
         message = EmailMessage()
@@ -70,22 +80,28 @@ Property type: {property_type}
 """
         )
 
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=30) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
+        app.logger.info("Connecting to Gmail SMTP...")
+
+        with smtplib.SMTP_SSL(
+            "smtp.gmail.com", 465, timeout=30
+        ) as server:
+            app.logger.info("Connected. Attempting Gmail login...")
             server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            app.logger.info("Login successful. Sending email...")
             server.send_message(message)
+
+        app.logger.info("Email sent successfully.")
 
         return jsonify({
             "message": "Thanks. We will be in touch within one business day."
         })
 
-    except Exception as error:
-        app.logger.error("Email failed: %s", error)
+    except Exception:
+        app.logger.exception("Email failed")
         return jsonify({
             "error": "We could not send your request. Please try again."
         }), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True)
